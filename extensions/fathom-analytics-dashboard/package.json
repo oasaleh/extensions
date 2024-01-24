@@ -1,7 +1,7 @@
 {
   "$schema": "https://www.raycast.com/schemas/extension.json",
-  "name": "fathom-analytics",
-  "title": "Fathom Analytics",
+  "name": "fathom-analytics-dashboard",
+  "title": "Fathom Analytics Dashboard",
   "description": "Gain quick insights into your Fathom Analytics sites, check stats and open a browser directly to the dashboard or site.",
   "icon": "icon.png",
   "author": "danielferguson",
@@ -14,28 +14,28 @@
     {
       "name": "list-sites",
       "title": "Check Website Stats",
-      "subtitle": "Fathom Analytics",
+      "subtitle": "Fathom Analytics Dashboard",
       "description": "Check website statistics and quickly open a browser to view more details.",
       "mode": "view"
     },
     {
       "name": "create-site",
       "title": "Create Site",
-      "subtitle": "Fathom Analytics",
+      "subtitle": "Fathom Analytics Dashboard",
       "description": "Create a site and get a site ID.",
       "mode": "view"
     },
     {
       "name": "delete-site",
       "title": "Delete Site",
-      "subtitle": "Fathom Analytics",
+      "subtitle": "Fathom Analytics Dashboard",
       "description": "Delete a site.",
       "mode": "view"
     },
     {
       "name": "open-dashboard",
       "title": "Open Dashboard",
-      "subtitle": "Fathom Analytics",
+      "subtitle": "Fathom Analytics Dashboard",
       "description": "Open Fathom Analytics.",
       "mode": "no-view"
     }
@@ -59,18 +59,17 @@
     "views"
   ],
   "dependencies": {
-    "@raycast/api": "^1.36.1",
+    "@raycast/api": "^1.62.0",
     "got": "^12.1.0"
   },
   "devDependencies": {
-    "@types/node": "~16.10.0",
-    "@types/react": "^17.0.28",
-    "@typescript-eslint/eslint-plugin": "^5.0.0",
-    "@typescript-eslint/parser": "^5.0.0",
+    "@raycast/eslint-config": "^1.0.8",
+    "@types/node": "^20.8.10",
+    "@types/react": "^18.2.27",
     "eslint": "^7.32.0",
-    "eslint-config-prettier": "^8.3.0",
-    "prettier": "^2.5.1",
-    "typescript": "^4.4.3"
+    "prettier": "^3.0.3",
+    "react": "^18.2.0",
+    "typescript": "^5.2.2"
   },
   "scripts": {
     "build": "ray build -e dist",
