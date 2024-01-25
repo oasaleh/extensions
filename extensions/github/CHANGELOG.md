@@ -1,5 +1,9 @@
 # GitHub Changelog
 
+## [Use OAuth utils] - {PR_MERGE_DATE}
+
+- Use new OAuth utils
+
 ## [Open vercel preview on pull requests] - 2023-12-18
 
 - If you have a vercel project, you can now open your preview directly from your pull request

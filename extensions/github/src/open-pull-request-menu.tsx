@@ -1,6 +1,7 @@
 import { Color, Icon, LaunchType, getPreferenceValues, launchCommand, open } from "@raycast/api";
 import { useCachedPromise } from "@raycast/utils";
 
+import { getGitHubClient } from "./api/githubClient";
 import {
   MenuBarItem,
   MenuBarItemConfigureCommand,
@@ -8,9 +9,8 @@ import {
   MenuBarSection,
   getBoundedPreferenceNumber,
 } from "./components/Menu";
-import View from "./components/View";
 import { PullRequestFieldsFragment } from "./generated/graphql";
-import { getGitHubClient } from "./helpers/withGithubClient";
+import { withGitHubClient } from "./helpers/withGithubClient";
 
 async function launchMyPullRequestsCommand(): Promise<void> {
   return launchCommand({ name: "my-pull-requests", type: LaunchType.UserInitiated });
@@ -105,10 +105,4 @@ function OpenPullRequestMenu() {
   );
 }
 
-export default function Command() {
-  return (
-    <View>
-      <OpenPullRequestMenu />
-    </View>
-  );
-}
+export default withGitHubClient(OpenPullRequestMenu);
