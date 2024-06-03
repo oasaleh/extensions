@@ -4,15 +4,21 @@ import { runAppleScript } from "run-applescript";
 export default async function Command() {
   const { alsoHideRaycast } = getPreferenceValues();
 
+  const promises = [];
+
   if (alsoHideRaycast) {
-    await closeMainWindow();
+    promises.push(closeMainWindow());
   }
 
-  await runAppleScript(`
-activate application "Finder"
-tell application "System Events"
-    set visible of processes where name is not "Finder" to false
-end tell
-tell application "Finder" to set collapsed of windows to true
-  `);
+  promises.push(runAppleScript(`
+    tell application "System Events"
+        set visible of processes where name is not "Finder" to false
+    end tell
+    tell application "Finder"
+        set collapsed of windows to true
+        activate
+    end tell
+  `));
+
+  await Promise.all(promises);
 }
